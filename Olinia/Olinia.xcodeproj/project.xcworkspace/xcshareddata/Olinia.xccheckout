@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8B785570-CD17-43A7-B2D0-A65642C2F2F2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Olinia</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>7DB9F2FF-4182-4727-AFF7-927859A55C20</key>
+		<string>https://github.com/sauza/Olinia.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Olinia/Olinia.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>7DB9F2FF-4182-4727-AFF7-927859A55C20</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sauza/Olinia.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>7DB9F2FF-4182-4727-AFF7-927859A55C20</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>7DB9F2FF-4182-4727-AFF7-927859A55C20</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Olinia</string>
+		</dict>
+	</array>
+</dict>
+</plist>
