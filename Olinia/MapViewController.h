@@ -7,8 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+@class AppDelegate;
 
-@interface MapViewController : UIViewController
+@interface MapViewController : UIViewController{
+    MKMapView *mapView;
+    CLLocationManager *locationManager;
+    CLLocation *location;
+    float latitude, longitude;
+    int cont;
+}
+
+
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+@property (nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, copy) AppDelegate *appDelegate;
 
 @end
