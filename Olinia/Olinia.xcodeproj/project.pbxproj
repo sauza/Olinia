@@ -46,6 +46,9 @@
 		3C8FEA8918A8541700B497F2 /* informacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FEA8418A8541700B497F2 /* informacion.png */; };
 		3C8FEA8A18A8541700B497F2 /* mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FEA8518A8541700B497F2 /* mapa.png */; };
 		3C8FEA8B18A8541700B497F2 /* rutas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FEA8618A8541700B497F2 /* rutas.png */; };
+		3CEFF2D018AC31F300A4E59A /* loadData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF2CF18AC31F300A4E59A /* loadData.m */; };
+		3CEFF2D318AC328D00A4E59A /* Ruta.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF2D218AC328D00A4E59A /* Ruta.m */; };
+		3CEFF2D618AC34BC00A4E59A /* Punto.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CEFF2D518AC34BC00A4E59A /* Punto.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +109,12 @@
 		3C8FEA8418A8541700B497F2 /* informacion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informacion.png; sourceTree = "<group>"; };
 		3C8FEA8518A8541700B497F2 /* mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapa.png; sourceTree = "<group>"; };
 		3C8FEA8618A8541700B497F2 /* rutas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rutas.png; sourceTree = "<group>"; };
+		3CEFF2CE18AC31BC00A4E59A /* loadData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loadData.h; sourceTree = "<group>"; };
+		3CEFF2CF18AC31F300A4E59A /* loadData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loadData.m; sourceTree = "<group>"; };
+		3CEFF2D118AC328D00A4E59A /* Ruta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ruta.h; sourceTree = "<group>"; };
+		3CEFF2D218AC328D00A4E59A /* Ruta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ruta.m; sourceTree = "<group>"; };
+		3CEFF2D418AC34BC00A4E59A /* Punto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Punto.h; sourceTree = "<group>"; };
+		3CEFF2D518AC34BC00A4E59A /* Punto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Punto.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +233,12 @@
 			children = (
 				3C8FEA5518A5425C00B497F2 /* SWRevealViewController.m */,
 				3C8FEA5418A5425C00B497F2 /* SWRevealViewController.h */,
+				3CEFF2CE18AC31BC00A4E59A /* loadData.h */,
+				3CEFF2CF18AC31F300A4E59A /* loadData.m */,
+				3CEFF2D118AC328D00A4E59A /* Ruta.h */,
+				3CEFF2D218AC328D00A4E59A /* Ruta.m */,
+				3CEFF2D418AC34BC00A4E59A /* Punto.h */,
+				3CEFF2D518AC34BC00A4E59A /* Punto.m */,
 			);
 			name = Library;
 			path = ..;
@@ -389,7 +404,10 @@
 				3C8FEA4818A53A4600B497F2 /* MainViewController.m in Sources */,
 				3C8FEA1C18A5336100B497F2 /* main.m in Sources */,
 				3C8FEA4B18A53C6100B497F2 /* MapViewController.m in Sources */,
+				3CEFF2D318AC328D00A4E59A /* Ruta.m in Sources */,
+				3CEFF2D618AC34BC00A4E59A /* Punto.m in Sources */,
 				3C8FEA5618A5425C00B497F2 /* SWRevealViewController.m in Sources */,
+				3CEFF2D018AC31F300A4E59A /* loadData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

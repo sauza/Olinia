@@ -27,21 +27,37 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    locationManager = [[CLLocationManager alloc] init];
+    [super viewDidLoad];
+    mapView = [[MKMapView alloc]
+               initWithFrame:CGRectMake(0,
+                                        0,
+                                        self.view.bounds.size.width,
+                                        self.view.bounds.size.height)
+               ];
+    mapView.showsUserLocation = YES;
+    mapView.mapType = MKMapTypeStandard;
+    mapView.delegate = self;
+    [self.view addSubview:mapView];
     
-   
-    mapView.showsUserLocation=YES;
-    [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
-    
-    MKCoordinateRegion coordinateRegion;
-    
-    [mapView setRegion:coordinateRegion animated:YES];
     
     
-    coordinateRegion.center = mapView.centerCoordinate;
-    coordinateRegion.span.latitudeDelta = 20;
-    coordinateRegion.span.longitudeDelta = 20;
-        
+    
+//    
+//    locationManager = [[CLLocationManager alloc] init];
+//    
+//   
+//    mapView.showsUserLocation=YES;
+//    [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
+//    
+//    MKCoordinateRegion coordinateRegion;
+//    
+//    [mapView setRegion:coordinateRegion animated:YES];
+//    
+//    
+//    coordinateRegion.center = mapView.centerCoordinate;
+//    coordinateRegion.span.latitudeDelta = 20;
+//    coordinateRegion.span.longitudeDelta = 20;
+//        
     
 //    
 //    
@@ -130,11 +146,11 @@
 }
 
 - (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    if(cont<4){
+    
         MKCoordinateRegion region;
         MKCoordinateSpan span;
-        span.latitudeDelta = 50;
-        span.longitudeDelta = 50;
+        span.latitudeDelta = 0.005f;
+        span.longitudeDelta = 0.005f;
         CLLocationCoordinate2D location;
         location.latitude = aUserLocation.coordinate.latitude;
         location.longitude = aUserLocation.coordinate.longitude;
@@ -142,7 +158,6 @@
         region.center = location;
         [aMapView setRegion:region animated:YES];
         cont++;
-    }
 }
 
 @end
