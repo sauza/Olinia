@@ -22,7 +22,6 @@
 		3C8FEA3F18A534DA00B497F2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FEA3E18A534DA00B497F2 /* MainStoryboard.storyboard */; };
 		3C8FEA4118A5379700B497F2 /* menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FEA4018A5379700B497F2 /* menu.png */; };
 		3C8FEA4318A537B200B497F2 /* menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C8FEA4218A537B200B497F2 /* menu@2x.png */; };
-		3C8FEA4818A53A4600B497F2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FEA4718A53A4600B497F2 /* MainViewController.m */; };
 		3C8FEA4B18A53C6100B497F2 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FEA4A18A53C6100B497F2 /* MapViewController.m */; };
 		3C8FEA4D18A5407E00B497F2 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA4C18A5407E00B497F2 /* MapKit.framework */; };
 		3C8FEA4F18A540B500B497F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA4E18A540B500B497F2 /* CoreLocation.framework */; };
@@ -81,8 +80,6 @@
 		3C8FEA3E18A534DA00B497F2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		3C8FEA4018A5379700B497F2 /* menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu.png; sourceTree = "<group>"; };
 		3C8FEA4218A537B200B497F2 /* menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu@2x.png"; sourceTree = "<group>"; };
-		3C8FEA4618A53A0E00B497F2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		3C8FEA4718A53A4600B497F2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		3C8FEA4918A53C5700B497F2 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = ../MapViewController.h; sourceTree = "<group>"; };
 		3C8FEA4A18A53C6100B497F2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
 		3C8FEA4C18A5407E00B497F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -181,8 +178,6 @@
 				3C8FEA1E18A5336100B497F2 /* AppDelegate.h */,
 				3C8FEA1F18A5336100B497F2 /* AppDelegate.m */,
 				3C8FEA3E18A534DA00B497F2 /* MainStoryboard.storyboard */,
-				3C8FEA4618A53A0E00B497F2 /* MainViewController.h */,
-				3C8FEA4718A53A4600B497F2 /* MainViewController.m */,
 				3C8FEA4918A53C5700B497F2 /* MapViewController.h */,
 				3C8FEA4A18A53C6100B497F2 /* MapViewController.m */,
 				3C8FEA5118A5413E00B497F2 /* SidebarViewController.h */,
@@ -401,7 +396,6 @@
 			files = (
 				3C8FEA5318A5417500B497F2 /* SidebarViewController.m in Sources */,
 				3C8FEA2018A5336100B497F2 /* AppDelegate.m in Sources */,
-				3C8FEA4818A53A4600B497F2 /* MainViewController.m in Sources */,
 				3C8FEA1C18A5336100B497F2 /* main.m in Sources */,
 				3C8FEA4B18A53C6100B497F2 /* MapViewController.m in Sources */,
 				3CEFF2D318AC328D00A4E59A /* Ruta.m in Sources */,

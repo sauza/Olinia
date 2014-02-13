@@ -7,10 +7,10 @@
 //
 
 #import "AppDelegate.h"
-#import "loadData.h"
+
 
 @implementation AppDelegate
-@synthesize mRutas=_mRutas;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -25,39 +25,6 @@
                                                            [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
                                                            UITextAttributeTextShadowOffset,
                                                            [UIFont fontWithName:@"Helvetica-Light" size:20.0], UITextAttributeFont, nil]];
-    
-
-    _mRutas=[[NSMutableArray alloc] init];
-    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                            (unsigned long)NULL), ^(void) {
-        [self cargaInicial];
-    });
-    
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        
-        UIActivityIndicatorView *activityIndicator =
-        [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-        UIBarButtonItem * barButton =
-        [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
-        
-        // Set to Left or Right
-        [[self navigationItem] setRightBarButtonItem:barButton];
-        
-        
-        [activityIndicator startAnimating];
-        [self cargaImagenes];
-        
-        
-        activityIndicator.hidesWhenStopped=TRUE;
-        
-        [activityIndicator stopAnimating];
-        
-    });
-    
-    
-    
     return YES;
 }
 
@@ -69,7 +36,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -88,16 +55,6 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void)cargaInicial{
-    
-    loadData *loader;
-    loader=[[loadData alloc]init];
-    [loader cargaInicial];
-    
-    self.mRutas=loader.arrayDatos;
-    
-    
-    
-}
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
+#import "loadData.h"
 
 @interface MapViewController ()
 
@@ -15,19 +16,22 @@
 
 @implementation MapViewController
 
-@synthesize mapView;
+//@synthesize mapView;
 @synthesize appDelegate=_appDelegate;
+@synthesize mRutas=_mRutas;
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
     
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    [super viewDidLoad];
+    
     mapView = [[MKMapView alloc]
                initWithFrame:CGRectMake(0,
                                         0,
@@ -38,6 +42,34 @@
     mapView.mapType = MKMapTypeStandard;
     mapView.delegate = self;
     [self.view addSubview:mapView];
+    
+    
+    self.mRutas=[[NSMutableArray alloc]init];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
+                                             (unsigned long)NULL), ^(void) {
+        
+        UIActivityIndicatorView *activityIndicator =
+        [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+        UIBarButtonItem * barButton =
+        [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
+        
+        // Set to Left or Right
+        [[self navigationItem] setRightBarButtonItem:barButton];
+        
+        
+        [activityIndicator startAnimating];
+        [self cargaInicial];
+        
+        
+        activityIndicator.hidesWhenStopped=TRUE;
+        
+        [activityIndicator stopAnimating];
+        
+    });
+    
+    
+
     
     
     
@@ -159,5 +191,16 @@
         [aMapView setRegion:region animated:YES];
         cont++;
 }
+
+-(void)cargaInicial{
+    
+    loadData *loader;
+    loader=[[loadData alloc]init];
+    [loader cargaInicial];
+    
+    self.mRutas=loader.arrayDatos;
+}
+
+
 
 @end

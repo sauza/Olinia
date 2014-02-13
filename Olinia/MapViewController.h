@@ -20,7 +20,8 @@
 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-@property (nonatomic) IBOutlet MKMapView *mapView;
+//@property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, copy) AppDelegate *appDelegate;
+@property (nonatomic, assign) NSMutableArray* mRutas;
 
 @end
