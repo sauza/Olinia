@@ -7,12 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Ruta.h"
+#import "Punto.h"
 
 @interface loadData : NSObject  <NSXMLParserDelegate>
 
-@property(nonatomic,copy) NSMutableArray *arrayDatos;
+//@property(nonatomic,copy) NSMutableArray *arrayDatos;
+//@property(nonatomic,copy) NSMutableArray *arrayPuntos;
+@property(nonatomic) Ruta *rutaActual;
+@property(nonatomic) Punto *actualPunto;
 @property(nonatomic) int bandera;
 
 -(void)cargaInicial;
+
 
 @end

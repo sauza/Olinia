@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@class AppDelegate;
+#import "AppDelegate.h"
 
 @interface MapViewController : UIViewController{
     MKMapView *mapView;
@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 //@property (nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, copy) AppDelegate *appDelegate;
-@property (nonatomic, assign) NSMutableArray* mRutas;
+@property (nonatomic, strong) NSMutableArray* mRutas;
+
+-(void) cargaInicial ;
 
 @end

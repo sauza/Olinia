@@ -11,8 +11,8 @@
 @interface Punto : NSObject
 
 @property(nonatomic, assign)int ID_Punto;
-@property(nonatomic, assign) float latitud;
-@property(nonatomic, assign) float longitud;
+@property(nonatomic, assign) double latitud;
+@property(nonatomic, assign) double longitud;
 @property(nonatomic, copy) NSString *nombre;
 
 @end

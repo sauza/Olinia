@@ -10,8 +10,17 @@
 
 @implementation Ruta
 @synthesize ID_Ruta=_ID_Ruta;
-@synthesize puntos=_puntos;
 @synthesize origen=_origen;
 @synthesize destino=_destino;
+@synthesize urlImage_Cromatica=_urlImage_Cromatica;
+@synthesize imagenCromatica=_imagenCromatica;
+@synthesize urlImage_Paradas=_urlImage_Paradas;
+@synthesize imagenParadas=_imagenParadas;
+@synthesize puntos=_puntos;
+
+
+-(void)guardaPunto{
+    //self.puntos addObject:<#(id)#>
+}
 
 @end

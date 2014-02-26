@@ -10,6 +10,7 @@
 
 
 @implementation AppDelegate
+@synthesize rutas = _rutas;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

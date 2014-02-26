@@ -17,7 +17,7 @@
 @implementation MapViewController
 
 //@synthesize mapView;
-@synthesize appDelegate=_appDelegate;
+//@synthesize appDelegate=_appDelegate;
 @synthesize mRutas=_mRutas;
 
 - (void)viewDidLoad
@@ -40,33 +40,12 @@
                ];
     mapView.showsUserLocation = YES;
     mapView.mapType = MKMapTypeStandard;
-    mapView.delegate = self;
+    //mapView.delegate = self;
     [self.view addSubview:mapView];
     
+    self.mRutas=[NSMutableArray array];
     
-    self.mRutas=[[NSMutableArray alloc]init];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,
-                                             (unsigned long)NULL), ^(void) {
-        
-        UIActivityIndicatorView *activityIndicator =
-        [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-        UIBarButtonItem * barButton =
-        [[UIBarButtonItem alloc] initWithCustomView:activityIndicator];
-        
-        // Set to Left or Right
-        [[self navigationItem] setRightBarButtonItem:barButton];
-        
-        
-        [activityIndicator startAnimating];
-        [self cargaInicial];
-        
-        
-        activityIndicator.hidesWhenStopped=TRUE;
-        
-        [activityIndicator stopAnimating];
-        
-    });
+    [self cargaInicial];
     
     
 
@@ -198,7 +177,13 @@
     loader=[[loadData alloc]init];
     [loader cargaInicial];
     
-    self.mRutas=loader.arrayDatos;
+    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [_appDelegate.rutas addObject:loader.rutaActual];
+    
+   
+    
+    self.mRutas=_appDelegate.rutas;
 }
 
 
