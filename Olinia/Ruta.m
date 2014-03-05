@@ -12,6 +12,7 @@
 @synthesize ID_Ruta=_ID_Ruta;
 @synthesize origen=_origen;
 @synthesize nombreRuta=_nombreRuta;
+@synthesize precio=_precio;
 @synthesize destino=_destino;
 @synthesize urlImage_Cromatica=_urlImage_Cromatica;
 @synthesize imagenCromatica=_imagenCromatica;

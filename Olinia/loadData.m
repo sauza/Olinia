@@ -75,7 +75,7 @@
             //actualRuta = [[Ruta alloc] init];
             self.rutaActual.puntos=[[NSMutableArray alloc] init];
             
-        } else if ([elementName isEqualToString:@"idRuta"] || [elementName isEqualToString:@"nombreRuta"] || [elementName isEqualToString:@"origen"] || [elementName isEqualToString:@"destino"] || [elementName isEqualToString:@"imageCromatica"] || [elementName isEqualToString:@"imageParada"] || [elementName isEqualToString:@"punto"] || [elementName isEqualToString:@"sentido"] || [elementName isEqualToString:@"idpunto"] || [elementName isEqualToString:@"latitud"] || [elementName isEqualToString:@"longitud"] || [elementName isEqualToString:@"nombre"]){
+        } else if ([elementName isEqualToString:@"idRuta"] || [elementName isEqualToString:@"precio"]  || [elementName isEqualToString:@"nombreRuta"] || [elementName isEqualToString:@"origen"] || [elementName isEqualToString:@"destino"] || [elementName isEqualToString:@"imageCromatica"] || [elementName isEqualToString:@"imageParada"] || [elementName isEqualToString:@"punto"] || [elementName isEqualToString:@"sentido"] || [elementName isEqualToString:@"idpunto"] || [elementName isEqualToString:@"latitud"] || [elementName isEqualToString:@"longitud"] || [elementName isEqualToString:@"nombre"]){
             stringBuffer = [[NSMutableString alloc] init];
         }
     }
@@ -103,6 +103,9 @@
         }
         else if ([elementName isEqualToString:@"idRuta"]) {
             self.rutaActual.ID_Ruta = [stringBuffer intValue];
+        }
+        else if ([elementName isEqualToString:@"precio"]) {
+            self.rutaActual.precio = stringBuffer;
         }
         else if ([elementName isEqualToString:@"nombreRuta"]) {
             self.rutaActual.nombreRuta = stringBuffer;

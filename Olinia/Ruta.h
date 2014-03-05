@@ -12,6 +12,7 @@
 @interface Ruta : NSObject
 @property (nonatomic, assign)int ID_Ruta;
 @property(nonatomic,copy) NSString *nombreRuta;
+@property (nonatomic, strong) NSString *precio;
 @property(nonatomic, copy) NSString *origen;
 @property(nonatomic, copy) NSString *destino;
 @property (nonatomic, copy) NSString *urlImage_Cromatica;

@@ -20,6 +20,8 @@ static Ruta *rutaMostrar = nil;
 
 - (void) viewDidLoad{
     
+    self.title=@"Rutas Disponibles";
+    
     rutaMostrar=[[Ruta alloc]init];
     
     self.arrayDatos=[AppDelegate getRuta];
@@ -35,6 +37,7 @@ static Ruta *rutaMostrar = nil;
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"reaching accessoryButtonTappedForRowWithIndexPath:");
     rutaMostrar=[self.arrayDatos objectAtIndex:indexPath.row];
+    
 }
 
 // 5 Marzo No necesario por implementacion de accessoryButtonTappedForRowWithIndexPath
@@ -67,9 +70,6 @@ static Ruta *rutaMostrar = nil;
 // 5_Marzo no es necesaria por el momento por presentacion mediante
 // accessoryButtonTappedForRowWithIndexPath
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    NSLog(@"reached prepareforSegue");
 //    InfoRutaViewController* destinationController = (InfoRutaViewController *)segue.destinationViewController;
 //    destinationController.rutaMostrar=rutaMostrar;
 //    if ([[segue identifier] isEqualToString:@"mostrarInfoRuta"]) {
@@ -77,7 +77,7 @@ static Ruta *rutaMostrar = nil;
 //       destinationController.rutaMostrar=rutaMostrar;
 //       [self presentViewController:destinationController animated:NO completion:nil];
 //    }
-//}
+//
 
 +(Ruta*) getRutaMostrar
 {
