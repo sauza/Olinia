@@ -12,6 +12,7 @@
 
 @interface InfoRutaViewController : UIViewController <MKMapViewDelegate>
 
-@property(nonatomic, copy) Ruta *rutaMostrar;
+@property(nonatomic) Ruta *rutaMostrar;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView; 
 
 @end

@@ -10,10 +10,11 @@
 #import "AppDelegate.h"
 
 @interface TableViewControllerRutas : UITableViewController{
-    Ruta *rutaMostrar;
+    
 }
 @property (nonatomic, copy) AppDelegate *appDelegate;
 @property (nonatomic, assign) NSMutableArray *arrayDatos;
 
++(Ruta *) getRutaMostrar;
 
 @end

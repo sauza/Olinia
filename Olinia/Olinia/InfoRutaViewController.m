@@ -7,12 +7,16 @@
 //
 
 #import "InfoRutaViewController.h"
+#import "SWRevealViewController.h"
+#import "AddressAnnotation.h"
+#import "TableViewControllerRutas.h"
 
 @interface InfoRutaViewController ()
 
 @end
 
 @implementation InfoRutaViewController
+@synthesize mapView=_mapView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,24 +30,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
-    /*NSMutableArray *tempPuntos=[[NSMutableArray alloc]init];
-     CLLocationCoordinate2D ctrpoint;
-     for (int i=0;i< [self.mRutas count]; i++) {
-     
-     tempPuntos=[[self.mRutas objectAtIndex:i]puntos];
-     for (int j=0; j<[tempPuntos count]; j++) {
-     ctrpoint.latitude = [[tempPuntos objectAtIndex:j]latitud];
-     ctrpoint.longitude =[[tempPuntos objectAtIndex:j]longitud];
-     
-     AddressAnnotation *addAnnotation = [[AddressAnnotation alloc] init];
-     addAnnotation.coordinate=ctrpoint;
-     [mapView addAnnotation:addAnnotation];
-     }
-     }*/
     
     
+    
+   	// Do any additional setup after loading the view.
+    
+    //insercion de puntos para ruta seleccionada
+    CLLocationCoordinate2D ctrpoint;
+    Ruta *auxRuta=[TableViewControllerRutas getRutaMostrar];
+    NSMutableArray *puntos= auxRuta.puntos;
+    for (int i=0; i<[puntos count]; i++) {
+        ctrpoint.latitude = [[puntos objectAtIndex:i]latitud];
+        ctrpoint.longitude =[[puntos objectAtIndex:i]longitud];
+        AddressAnnotation *addAnnotation = [[AddressAnnotation alloc] init];
+        addAnnotation.coordinate=ctrpoint;
+        [self.mapView addAnnotation:addAnnotation];
+    }
+    //centrado de mapa en ruta
+    int i=([puntos count]/2)-2;
+    CLLocation *ubicacionMedia=[[CLLocation alloc] initWithLatitude:[[puntos objectAtIndex:i]latitud] longitude:[[puntos objectAtIndex:i]longitud]];
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(ubicacionMedia.coordinate, 10000, 10000);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

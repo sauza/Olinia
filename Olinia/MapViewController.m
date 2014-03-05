@@ -9,7 +9,6 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import "loadData.h"
-#import "AddressAnnotation.h"
 
 @interface MapViewController ()
 
