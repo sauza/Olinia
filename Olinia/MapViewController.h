@@ -10,20 +10,15 @@
 #import <MapKit/MapKit.h>
 #import "AppDelegate.h"
 
-@interface MapViewController : UIViewController{
-    MKMapView *mapView;
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>{
     CLLocationManager *locationManager;
-    CLLocation *location;
-    float latitude, longitude;
-    int cont;
+    CLLocation *ubicacionActual;
 }
 
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
-//@property (nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, copy) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSMutableArray* mRutas;
-
--(void) cargaInicial ;
 
 @end

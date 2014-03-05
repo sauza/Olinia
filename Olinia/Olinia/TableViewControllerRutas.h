@@ -11,5 +11,7 @@
 
 @interface TableViewControllerRutas : UITableViewController
 @property (nonatomic, copy) AppDelegate *appDelegate;
+@property (nonatomic, assign) NSMutableArray *arrayDatos;
+
 
 @end

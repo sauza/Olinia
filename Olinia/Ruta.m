@@ -11,12 +11,15 @@
 @implementation Ruta
 @synthesize ID_Ruta=_ID_Ruta;
 @synthesize origen=_origen;
+@synthesize nombreRuta=_nombreRuta;
 @synthesize destino=_destino;
 @synthesize urlImage_Cromatica=_urlImage_Cromatica;
 @synthesize imagenCromatica=_imagenCromatica;
 @synthesize urlImage_Paradas=_urlImage_Paradas;
 @synthesize imagenParadas=_imagenParadas;
 @synthesize puntos=_puntos;
+@synthesize rutaCargada=_rutaCargada;
+
 
 
 -(void)guardaPunto{

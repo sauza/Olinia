@@ -12,7 +12,7 @@
 
 @interface loadData : NSObject  <NSXMLParserDelegate>
 
-//@property(nonatomic,copy) NSMutableArray *arrayDatos;
+@property(nonatomic,copy) NSMutableArray *arrayDatos;
 //@property(nonatomic,copy) NSMutableArray *arrayPuntos;
 @property(nonatomic) Ruta *rutaActual;
 @property(nonatomic) Punto *actualPunto;

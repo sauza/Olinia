@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Ruta.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, copy) NSMutableArray *rutas;
+@property (nonatomic) BOOL firstTime;
+@property (nonatomic, copy) NSMutableArray *rutaCompArray;
 
++(NSMutableArray *) getRuta;
 
 
 @end

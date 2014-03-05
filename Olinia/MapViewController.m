@@ -9,20 +9,31 @@
 #import "MapViewController.h"
 #import "SWRevealViewController.h"
 #import "loadData.h"
+#import "AddressAnnotation.h"
 
 @interface MapViewController ()
 
 @end
 
 @implementation MapViewController
-
+@synthesize mapView;
 //@synthesize mapView;
 //@synthesize appDelegate=_appDelegate;
+
 @synthesize mRutas=_mRutas;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.mapView.delegate = self;
+    
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startMonitoringSignificantLocationChanges];
+    
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.target = self.revealViewController;
@@ -31,102 +42,48 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    
-    mapView = [[MKMapView alloc]
-               initWithFrame:CGRectMake(0,
-                                        0,
-                                        self.view.bounds.size.width,
-                                        self.view.bounds.size.height)
-               ];
-    mapView.showsUserLocation = YES;
-    mapView.mapType = MKMapTypeStandard;
-    //mapView.delegate = self;
-    [self.view addSubview:mapView];
-    
     self.mRutas=[NSMutableArray array];
+    self.mRutas=[AppDelegate getRuta];
     
-    [self cargaInicial];
-    
-    
+   /*NSMutableArray *tempPuntos=[[NSMutableArray alloc]init];
+    CLLocationCoordinate2D ctrpoint;
+    for (int i=0;i< [self.mRutas count]; i++) {
+        
+        tempPuntos=[[self.mRutas objectAtIndex:i]puntos];
+        for (int j=0; j<[tempPuntos count]; j++) {
+            ctrpoint.latitude = [[tempPuntos objectAtIndex:j]latitud];
+            ctrpoint.longitude =[[tempPuntos objectAtIndex:j]longitud];
+            
+            AddressAnnotation *addAnnotation = [[AddressAnnotation alloc] init];
+            addAnnotation.coordinate=ctrpoint;
+            [mapView addAnnotation:addAnnotation];
+        }
+    }*/
+     
+}
 
-    
-    
-    
-    
-//    
-//    locationManager = [[CLLocationManager alloc] init];
-//    
-//   
-//    mapView.showsUserLocation=YES;
-//    [mapView setUserTrackingMode:MKUserTrackingModeFollowWithHeading animated:YES];
-//    
-//    MKCoordinateRegion coordinateRegion;
-//    
-//    [mapView setRegion:coordinateRegion animated:YES];
-//    
-//    
-//    coordinateRegion.center = mapView.centerCoordinate;
-//    coordinateRegion.span.latitudeDelta = 20;
-//    coordinateRegion.span.longitudeDelta = 20;
-//        
-    
-//    
-//    
-//    // Add MKMapView in your View
-//    
-//    mapView=[[MKMapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-//    mapView.delegate=self;
-//    [self.view addSubview:mapView];
-//    
-//    
-//    
-//    
-//    // Create an instance of CLLocationManager
-//    
-//    locationManager=[[CLLocationManager alloc] init];
-//    locationManager.desiredAccuracy=kCLLocationAccuracyBest;
-//    locationManager.delegate=self;
-//    [locationManager startUpdatingLocation];
-//    
-//    // Create an instance of CLLocation
-//    
-//    location=[locationManager location];
-//    
-//    // Set Center Coordinates of MapView
-//    
-//    mapView.centerCoordinate=CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-//    
-//    // Set Annotation to show current Location
-//    
-//    MKPointAnnotation *annotaionPoint=[[MKPointAnnotation alloc] init];
-//    annotaionPoint.coordinate=mapView.centerCoordinate;
-//    annotaionPoint.title=@"New Delhi";
-//    annotaionPoint.subtitle=@"Capital";
-//    [mapView addAnnotation:annotaionPoint];
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidLoad];
+}
 
-   
+/*- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+ {
+ self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+ if (self) {
+ // Custom initialization
  
-    
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-        
-        // Change button color
-        _sidebarButton.tintColor = [UIColor colorWithRed:11 green:97 blue:255 alpha:0];
-        
-        // Set the side bar button action. When it's tapped, it'll show up the sidebar.
-        _sidebarButton.target = self.revealViewController;
-        _sidebarButton.action = @selector(revealToggle:);
-        
-        // Set the gesture
-        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    }
-    return self;
-}
+ // Change button color
+ _sidebarButton.tintColor = [UIColor colorWithRed:11 green:97 blue:255 alpha:0];
+ 
+ // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+ _sidebarButton.target = self.revealViewController;
+ _sidebarButton.action = @selector(revealToggle:);
+ 
+ // Set the gesture
+ [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+ }
+ return self;
+ }*/
 
 
 - (void)didReceiveMemoryWarning
@@ -135,55 +92,31 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (MKAnnotationView *)mapView:(MKMapView *)mapVista viewForAnnotation:(id <MKAnnotation>)annotation {
-    if (annotation == mapView.userLocation) return nil;
-    else {
-        MKPinAnnotationView *pinView = (MKPinAnnotationView *)[mapVista
-                                                               dequeueReusableAnnotationViewWithIdentifier:@"pinView"];
-        if (!pinView) {
-            pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"pinView"];
-            pinView.pinColor = MKPinAnnotationColorRed;
-            pinView.animatesDrop = YES;
-            pinView.canShowCallout = YES;
-            
-            UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            pinView.rightCalloutAccessoryView = rightButton;
-        } else {
-            pinView.annotation = annotation;
-        }
-        return pinView;
+
+#pragma mark - CLLocationManagerDelegate
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    ubicacionActual=newLocation;
+    
+    if (currentLocation != nil) {
         
+        MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(ubicacionActual.coordinate, 800, 800);
+        [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+        
+        //longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
+        //latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
     }
-}
-
-- (void)mapView:(MKMapView *)aMapView didUpdateUserLocation:(MKUserLocation *)aUserLocation {
-    
-        MKCoordinateRegion region;
-        MKCoordinateSpan span;
-        span.latitudeDelta = 0.005f;
-        span.longitudeDelta = 0.005f;
-        CLLocationCoordinate2D location;
-        location.latitude = aUserLocation.coordinate.latitude;
-        location.longitude = aUserLocation.coordinate.longitude;
-        region.span = span;
-        region.center = location;
-        [aMapView setRegion:region animated:YES];
-        cont++;
-}
-
--(void)cargaInicial{
-    
-    loadData *loader;
-    loader=[[loadData alloc]init];
-    [loader cargaInicial];
-    
-    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    [_appDelegate.rutas addObject:loader.rutaActual];
-    
-   
-    
-    self.mRutas=_appDelegate.rutas;
 }
 
 

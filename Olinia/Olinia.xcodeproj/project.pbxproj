@@ -11,6 +11,7 @@
 		3C12D54F18B6BB5100BD34A3 /* favoritas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C12D54B18B6BB5100BD34A3 /* favoritas.png */; };
 		3C12D55018B6BB5100BD34A3 /* informacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C12D54C18B6BB5100BD34A3 /* informacion.png */; };
 		3C12D55118B6BB5100BD34A3 /* mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C12D54D18B6BB5100BD34A3 /* mapa.png */; };
+		3C5C9B8718C59D57000FE7C9 /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5C9B8618C59D57000FE7C9 /* AddressAnnotation.m */; };
 		3C8FEA1018A5336100B497F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA0F18A5336100B497F2 /* Foundation.framework */; };
 		3C8FEA1218A5336100B497F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA1118A5336100B497F2 /* CoreGraphics.framework */; };
 		3C8FEA1418A5336100B497F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA1318A5336100B497F2 /* UIKit.framework */; };
@@ -31,6 +32,8 @@
 		3C8FEA4F18A540B500B497F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA4E18A540B500B497F2 /* CoreLocation.framework */; };
 		3C8FEA5318A5417500B497F2 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FEA5218A5417500B497F2 /* SidebarViewController.m */; };
 		3C8FEA5618A5425C00B497F2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FEA5518A5425C00B497F2 /* SWRevealViewController.m */; };
+		3CB33DC718C638E800EBFF7D /* Celda.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB33DC618C638E800EBFF7D /* Celda.m */; };
+		3CB33DCD18C6A58400EBFF7D /* InfoRutaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB33DCC18C6A58400EBFF7D /* InfoRutaViewController.m */; };
 		3CBD64CE18BAC49E0038FD2C /* comunicacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CBD64CC18BAC49E0038FD2C /* comunicacion.png */; };
 		3CBD64CF18BAC49E0038FD2C /* rutas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CBD64CD18BAC49E0038FD2C /* rutas.png */; };
 		3CBD64D218BAC95E0038FD2C /* TableViewControllerRutas.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD64D118BAC95E0038FD2C /* TableViewControllerRutas.m */; };
@@ -54,6 +57,8 @@
 		3C12D54B18B6BB5100BD34A3 /* favoritas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritas.png; sourceTree = "<group>"; };
 		3C12D54C18B6BB5100BD34A3 /* informacion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informacion.png; sourceTree = "<group>"; };
 		3C12D54D18B6BB5100BD34A3 /* mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapa.png; sourceTree = "<group>"; };
+		3C5C9B8518C59D57000FE7C9 /* AddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
+		3C5C9B8618C59D57000FE7C9 /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
 		3C8FEA0C18A5336100B497F2 /* Olinia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olinia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C8FEA0F18A5336100B497F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3C8FEA1118A5336100B497F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,6 +86,10 @@
 		3C8FEA5218A5417500B497F2 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = ../SidebarViewController.m; sourceTree = "<group>"; };
 		3C8FEA5418A5425C00B497F2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3C8FEA5518A5425C00B497F2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		3CB33DC518C638E800EBFF7D /* Celda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Celda.h; sourceTree = "<group>"; };
+		3CB33DC618C638E800EBFF7D /* Celda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Celda.m; sourceTree = "<group>"; };
+		3CB33DCB18C6A58400EBFF7D /* InfoRutaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoRutaViewController.h; sourceTree = "<group>"; };
+		3CB33DCC18C6A58400EBFF7D /* InfoRutaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoRutaViewController.m; sourceTree = "<group>"; };
 		3CBD64CC18BAC49E0038FD2C /* comunicacion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = comunicacion.png; sourceTree = "<group>"; };
 		3CBD64CD18BAC49E0038FD2C /* rutas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rutas.png; sourceTree = "<group>"; };
 		3CBD64D018BAC95E0038FD2C /* TableViewControllerRutas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewControllerRutas.h; sourceTree = "<group>"; };
@@ -163,6 +172,8 @@
 				3C8FEA5218A5417500B497F2 /* SidebarViewController.m */,
 				3CBD64D018BAC95E0038FD2C /* TableViewControllerRutas.h */,
 				3CBD64D118BAC95E0038FD2C /* TableViewControllerRutas.m */,
+				3CB33DCB18C6A58400EBFF7D /* InfoRutaViewController.h */,
+				3CB33DCC18C6A58400EBFF7D /* InfoRutaViewController.m */,
 				3C8FEA2118A5336100B497F2 /* Images.xcassets */,
 				3C8FEA5718A5426800B497F2 /* Library */,
 				3C8FEA1618A5336100B497F2 /* Supporting Files */,
@@ -215,6 +226,10 @@
 				3CEFF2D218AC328D00A4E59A /* Ruta.m */,
 				3CEFF2D418AC34BC00A4E59A /* Punto.h */,
 				3CEFF2D518AC34BC00A4E59A /* Punto.m */,
+				3C5C9B8518C59D57000FE7C9 /* AddressAnnotation.h */,
+				3C5C9B8618C59D57000FE7C9 /* AddressAnnotation.m */,
+				3CB33DC518C638E800EBFF7D /* Celda.h */,
+				3CB33DC618C638E800EBFF7D /* Celda.m */,
 			);
 			name = Library;
 			path = ..;
@@ -294,6 +309,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Christopher Hardy";
 				TargetAttributes = {
+					3C8FEA0B18A5336100B497F2 = {
+						DevelopmentTeam = YL72FFL9AZ;
+					};
 					3C8FEA2618A5336100B497F2 = {
 						TestTargetID = 3C8FEA0B18A5336100B497F2;
 					};
@@ -351,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB33DC718C638E800EBFF7D /* Celda.m in Sources */,
 				3C8FEA5318A5417500B497F2 /* SidebarViewController.m in Sources */,
 				3C8FEA2018A5336100B497F2 /* AppDelegate.m in Sources */,
 				3CBD64D218BAC95E0038FD2C /* TableViewControllerRutas.m in Sources */,
@@ -360,6 +379,8 @@
 				3CEFF2D618AC34BC00A4E59A /* Punto.m in Sources */,
 				3C8FEA5618A5425C00B497F2 /* SWRevealViewController.m in Sources */,
 				3CEFF2D018AC31F300A4E59A /* loadData.m in Sources */,
+				3CB33DCD18C6A58400EBFF7D /* InfoRutaViewController.m in Sources */,
+				3C5C9B8718C59D57000FE7C9 /* AddressAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,10 +499,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Olinia/Olinia-Prefix.pch";
 				INFOPLIST_FILE = "Olinia/Olinia-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -491,10 +515,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Olinia/Olinia-Prefix.pch";
 				INFOPLIST_FILE = "Olinia/Olinia-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

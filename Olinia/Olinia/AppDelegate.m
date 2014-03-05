@@ -7,15 +7,20 @@
 //
 
 #import "AppDelegate.h"
+#import "loadData.h"
+#import "Ruta.h"
 
 
 @implementation AppDelegate
-@synthesize rutas = _rutas;
+@synthesize firstTime=_firstTime;
+@synthesize rutaCompArray=_rutaCompArray;
+static NSMutableArray *rutaComp = nil;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    //self.rutaCompArray=[[NSMutableArray alloc]init];
     
     UIImage *navBackgroundImage = [UIImage imageNamed:@"nav_bg"];
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
@@ -26,7 +31,13 @@
                                                            [NSValue valueWithUIOffset:UIOffsetMake(0, 0)],
                                                            UITextAttributeTextShadowOffset,
                                                            [UIFont fontWithName:@"Helvetica-Light" size:20.0], UITextAttributeFont, nil]];
+    
+    
+    [self cargaInicial];
+    [self performSelectorInBackground:@selector(loadImage) withObject:nil];
     return YES;
+    
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -56,6 +67,74 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void)cargaInicial{
+    
+    loadData *loader;
+    loader=[[loadData alloc]init];
+    [loader cargaInicial];
+    self.rutaCompArray=loader.arrayDatos;
+    self.firstTime=TRUE;
+    rutaComp=self.rutaCompArray;
+    
+    
+    //    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    //    _appDelegate.rutas=loader.arrayDatos;
+    //    self.mRutas=_appDelegate.rutas;
+    //    self.appDelegate.firstTime=TRUE;
+    
+}
 
+- (void)loadImage
+{
+    NSMutableArray *auxArray=[[NSMutableArray alloc]init];
+    Ruta *auxRuta;
+    for (int i=0; i<[self.rutaCompArray count]; i++) {
+        NSURL * url = [NSURL URLWithString:[[self.rutaCompArray objectAtIndex:i]urlImage_Cromatica]];
+        NSData * data = [NSData dataWithContentsOfURL:url];
+        UIImage * image = [UIImage imageWithData:data];
+        
+        
+        
+        url = [NSURL URLWithString:[[self.rutaCompArray objectAtIndex:i]urlImage_Paradas]];
+        data = [NSData dataWithContentsOfURL:url];
+        UIImage * image2 = [UIImage imageWithData:data];
+        auxRuta=[self.rutaCompArray objectAtIndex:i];
+        
+        if (image && image2)
+        {
+            auxRuta.imagenCromatica = image;
+            auxRuta.imagenParadas = image2;
+            [auxArray addObject:auxRuta];
+            if (i+1==[self.rutaCompArray count]) {
+                self.rutaCompArray = auxArray;
+            }
+            
+        }
+        else
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:@"No se pudo cargar imagen de bus o de paradas" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:@"Ok", nil];
+            [alert show];
+            break;
+            
+        }
+    }
+    [self reloadInputViews];
+}
++(NSMutableArray*) getRuta
+{
+    @synchronized(self)
+    {
+        if(rutaComp == nil)
+        {
+            rutaComp = [[self alloc] init];
+            
+            rutaComp = [[NSMutableArray alloc] init];
+            
+            
+            
+        }
+        return rutaComp;
+    }
+}
 
 @end

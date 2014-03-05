@@ -11,6 +11,7 @@
 
 @interface Ruta : NSObject
 @property (nonatomic, assign)int ID_Ruta;
+@property(nonatomic,copy) NSString *nombreRuta;
 @property(nonatomic, copy) NSString *origen;
 @property(nonatomic, copy) NSString *destino;
 @property (nonatomic, copy) NSString *urlImage_Cromatica;
@@ -18,5 +19,6 @@
 @property (nonatomic, copy) NSString *urlImage_Paradas;
 @property (nonatomic, copy) UIImage *imagenParadas;
 @property(nonatomic, copy) NSMutableArray* puntos;
+@property (nonatomic, copy) NSMutableArray* rutaCargada;
 
 @end

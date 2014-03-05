@@ -7,9 +7,40 @@
 //
 
 #import "TableViewControllerRutas.h"
+#import "SWRevealViewController.h"
+#import "Celda.h"
+
 
 @implementation TableViewControllerRutas
 @synthesize appDelegate=_appDelegate;
+@synthesize arrayDatos=_arrayDatos;
+
+
+- (void) viewDidLoad{
+    //_sidebarButton.target = self.revealViewController;
+    //_sidebarButton.action = @selector(revealToggle:);
+    
+    self.arrayDatos=[AppDelegate getRuta];
+    
+    
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    UIImage *menu = [UIImage imageNamed:@"menu.png"];
+    
+    UIBarButtonItem *flipButton = [[UIBarButtonItem alloc]
+                                   initWithImage:menu style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    self.navigationItem.leftBarButtonItem = flipButton;
+
+    
+    //_sidebarButton=flipButton;
+    
+    
+    
+}
+
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -28,8 +59,28 @@
     // Return the number of rows in the section.
     // If you're serving data from an array, return the length of the array:
     //return [dataArray count];
-    return [_appDelegate.rutas count];
+    
+    return [self.arrayDatos count];
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    Celda *cell = [tableView dequeueReusableCellWithIdentifier:@"celdaListaRutas"];
+    if (cell == nil) {
+        cell = [[Celda alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celdaListaRutas"];
+    }
+//    NSString *cellText = [[self.arrayDatos objectAtIndex:indexPath.row]origen];
+//    NSString *cellText2 = [cellText stringByAppendingString:@" "];
+//    NSString *cellText3 = [cellText2 stringByAppendingString:[[self.arrayDatos objectAtIndex:indexPath.row]destino]];
+    
+    cell.nombre.text = [[self.arrayDatos objectAtIndex:indexPath.row]nombreRuta];
+    cell.imagenBus.image=[[self.arrayDatos objectAtIndex:indexPath.row]imagenCromatica];
+    return cell;
+}
+
+
+
 
 
 

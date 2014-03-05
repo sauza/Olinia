@@ -9,9 +9,10 @@
 #import "Punto.h"
 
 @implementation Punto
+@synthesize sentido=_sentido;
 @synthesize ID_Punto=_ID_Punto;
-@synthesize longitud=_longitud;
 @synthesize latitud=_latitud;
+@synthesize longitud=_longitud;
 @synthesize nombre=_nombre;
 
 @end

@@ -10,6 +10,7 @@
 
 @interface Punto : NSObject
 
+@property(nonatomic, assign)bool sentido;
 @property(nonatomic, assign)int ID_Punto;
 @property(nonatomic, assign) double latitud;
 @property(nonatomic, assign) double longitud;

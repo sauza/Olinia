@@ -16,10 +16,9 @@
     NSString *stringBuffer;
     //NSMutableString *stringBuffer;
     NSMutableArray *arrayPuntos;// = [[NSMutableArray alloc] init];
-    
+    NSMutableArray *arrayRutasFin;
     //Ruta *actualRuta;
     //Punto *actualPunto;
-    int numPunto;
 }
 
 
@@ -28,17 +27,17 @@
 
 @implementation loadData
 
-//@synthesize arrayDatos=_arrayDatos;
+@synthesize arrayDatos=_arrayDatos;
 //@synthesize arrayPuntos=_arrayPuntos;
 @synthesize bandera=_bandera;
 @synthesize rutaActual=_rutaActual;
 @synthesize actualPunto=_actualPunto;
 
 -(void)cargaInicial{
-    numPunto=0;
     self.bandera=1;
-    //self.arrayDatos = [[NSMutableArray alloc]init];
+    self.arrayDatos = [[NSMutableArray alloc]init];
     arrayPuntos = [[NSMutableArray alloc] init];
+    arrayRutasFin= [[NSMutableArray alloc] init];
     self.rutaActual = [[Ruta alloc] init];
     [self parseXML];
     
@@ -76,7 +75,7 @@
             //actualRuta = [[Ruta alloc] init];
             self.rutaActual.puntos=[[NSMutableArray alloc] init];
             
-        } else if ([elementName isEqualToString:@"idRuta"] || [elementName isEqualToString:@"nombreRuta"] || [elementName isEqualToString:@"origen"] || [elementName isEqualToString:@"destino"] || [elementName isEqualToString:@"imageCromatica"] || [elementName isEqualToString:@"imageParada"] || [elementName isEqualToString:@"punto"] || [elementName isEqualToString:@"idpunto"] || [elementName isEqualToString:@"latitud"] || [elementName isEqualToString:@"longitud"]){
+        } else if ([elementName isEqualToString:@"idRuta"] || [elementName isEqualToString:@"nombreRuta"] || [elementName isEqualToString:@"origen"] || [elementName isEqualToString:@"destino"] || [elementName isEqualToString:@"imageCromatica"] || [elementName isEqualToString:@"imageParada"] || [elementName isEqualToString:@"punto"] || [elementName isEqualToString:@"sentido"] || [elementName isEqualToString:@"idpunto"] || [elementName isEqualToString:@"latitud"] || [elementName isEqualToString:@"longitud"] || [elementName isEqualToString:@"nombre"]){
             stringBuffer = [[NSMutableString alloc] init];
         }
     }
@@ -92,7 +91,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
-    stringBuffer=@"";
+    //stringBuffer=@"";
     stringBuffer=string;
     
 }
@@ -100,59 +99,50 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
         if ([elementName isEqualToString:@"ruta"]) {
-            
-            
+            self.arrayDatos = [[NSMutableArray alloc] init];
         }
         else if ([elementName isEqualToString:@"idRuta"]) {
-            
-            self.rutaActual.ID_Ruta = [[stringBuffer description] intValue];
-            //actualRuta.ID_Ruta = [[stringBuffer description] intValue];
-            
+            self.rutaActual.ID_Ruta = [stringBuffer intValue];
+        }
+        else if ([elementName isEqualToString:@"nombreRuta"]) {
+            self.rutaActual.nombreRuta = stringBuffer;
         }
         else if ([elementName isEqualToString:@"origen"]) {
-            
-            self.rutaActual.origen = [stringBuffer description];
-            //actualRuta.origen = [stringBuffer description];
+            self.rutaActual.origen = stringBuffer;
         }
         else if ([elementName isEqualToString:@"destino"]) {
-            
-            self.rutaActual.destino = [stringBuffer description];
-            //actualRuta.destino = [stringBuffer description];
+            self.rutaActual.destino = stringBuffer;
         }
         else if ([elementName isEqualToString:@"imageCromatica"]) {
-            
-            self.rutaActual.urlImage_Cromatica = [stringBuffer description];
-            //actualRuta.destino = [stringBuffer description];
+            self.rutaActual.urlImage_Cromatica = stringBuffer;
         }
         else if ([elementName isEqualToString:@"imageParada"]) {
-            
             self.rutaActual.urlImage_Paradas = stringBuffer;
-            //actualRuta.destino = [stringBuffer description];
+        }
+        else if ([elementName isEqualToString:@"sentido"]) {
+            self.actualPunto = [[Punto alloc] init];
+            self.actualPunto.sentido = [stringBuffer boolValue];
         }
         else if ([elementName isEqualToString:@"idpunto"]) {
-            self.actualPunto = [[Punto alloc] init];
             self.actualPunto.ID_Punto = [stringBuffer intValue];
         }
         else if ([elementName isEqualToString:@"latitud"]) {
             self.actualPunto.latitud = [stringBuffer doubleValue];
         }
         else if ([elementName isEqualToString:@"longitud"]) {
-            
             self.actualPunto.longitud = [stringBuffer doubleValue];
         }
         else if ([elementName isEqualToString:@"nombre"]) {
-            
             self.actualPunto.nombre = stringBuffer;
             [arrayPuntos addObject:self.actualPunto];
-            //actualRuta.puntos[numPunto]=actualPunto;
-            numPunto++;
         }
         else if ([elementName isEqualToString:@"endof"]){
             self.rutaActual.puntos = arrayPuntos;
-            
-            //self.arrayDatos = self.rutaActual;
+            [arrayRutasFin addObject:self.rutaActual];
         }
-    
+        else if ([elementName isEqualToString:@"fin"]){
+            self.arrayDatos=arrayRutasFin;
+        }
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
