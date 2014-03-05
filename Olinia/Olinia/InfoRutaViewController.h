@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import "Ruta.h"
 
-@interface InfoRutaViewController : UIViewController
+@interface InfoRutaViewController : UIViewController <MKMapViewDelegate>
+
+@property(nonatomic, copy) Ruta *rutaMostrar;
 
 @end

@@ -292,7 +292,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="mvZ-lk-0p3"/>
                     <connections>
-                        <segue destination="jbm-FO-j2Y" kind="custom" customClass="SWRevealViewControllerSegue" id="9Qk-Sx-f5A"/>
+                        <segue destination="jbm-FO-j2Y" kind="custom" identifier="mostrarInfoRuta" customClass="SWRevealViewControllerSegue" id="9Qk-Sx-f5A"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eG6-Sk-9u2" userLabel="First Responder" sceneMemberID="firstResponder"/>

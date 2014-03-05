@@ -45,20 +45,6 @@
     self.mRutas=[NSMutableArray array];
     self.mRutas=[AppDelegate getRuta];
     
-   /*NSMutableArray *tempPuntos=[[NSMutableArray alloc]init];
-    CLLocationCoordinate2D ctrpoint;
-    for (int i=0;i< [self.mRutas count]; i++) {
-        
-        tempPuntos=[[self.mRutas objectAtIndex:i]puntos];
-        for (int j=0; j<[tempPuntos count]; j++) {
-            ctrpoint.latitude = [[tempPuntos objectAtIndex:j]latitud];
-            ctrpoint.longitude =[[tempPuntos objectAtIndex:j]longitud];
-            
-            AddressAnnotation *addAnnotation = [[AddressAnnotation alloc] init];
-            addAnnotation.coordinate=ctrpoint;
-            [mapView addAnnotation:addAnnotation];
-        }
-    }*/
      
 }
 

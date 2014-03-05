@@ -9,6 +9,7 @@
 #import "TableViewControllerRutas.h"
 #import "SWRevealViewController.h"
 #import "Celda.h"
+#import "InfoRutaViewController.h"
 
 
 @implementation TableViewControllerRutas
@@ -19,6 +20,8 @@
 - (void) viewDidLoad{
     //_sidebarButton.target = self.revealViewController;
     //_sidebarButton.action = @selector(revealToggle:);
+    
+    rutaMostrar=[[Ruta alloc]init];
     
     self.arrayDatos=[AppDelegate getRuta];
     
@@ -40,14 +43,17 @@
     
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     int selectedRow = indexPath.row;
     NSLog(@"touch on row %d", selectedRow);
+    
+    rutaMostrar=[self.arrayDatos objectAtIndex:selectedRow];
+    
+    
+    [self performSegueWithIdentifier:@"mostrarInfoRuta" sender:self];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -79,8 +85,15 @@
     return cell;
 }
 
-
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"mostrarInfoRuta"]) {
+        
+        InfoRutaViewController *vc = [segue destinationViewController];
+        
+        vc.rutaMostrar=rutaMostrar;
+    }
+}
 
 
 
