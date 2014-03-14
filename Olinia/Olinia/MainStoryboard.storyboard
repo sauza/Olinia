@@ -26,6 +26,41 @@
             </objects>
             <point key="canvasLocation" x="26" y="29"/>
         </scene>
+        <!--General Info View Controller-->
+        <scene sceneID="byL-7J-p8g">
+            <objects>
+                <viewController id="9nb-7c-Yag" customClass="GeneralInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UXR-Ka-n2a"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lmq-RE-PkT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bm0-6E-9ty">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHB-LM-Vl9">
+                                <rect key="frame" x="0.0" y="302" width="320" height="226"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logotipo_curvas-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="lTB-Sf-fZI">
+                                <rect key="frame" x="65" y="123" width="191" height="191"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="generalInfo" destination="sHB-LM-Vl9" id="bCD-Ei-rVW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="muc-Na-qIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="-1072"/>
+        </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="cJn-wg-BR1">
             <objects>
@@ -180,6 +215,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="9nb-7c-Yag" kind="custom" customClass="SWRevealViewControllerSegue" id="TXD-e2-qYx"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="comunicacion" id="M8f-aw-kMR">
                                 <rect key="frame" x="0.0" y="252" width="320" height="44"/>
@@ -209,6 +247,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="8R2-mt-tm7" kind="custom" customClass="SWRevealViewControllerSegue" id="LHn-py-uhW"/>
+                                </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ayuda" id="EjT-vb-75d">
                                 <rect key="frame" x="0.0" y="296" width="320" height="44"/>
@@ -249,6 +290,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dji-u7-ryL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="624" y="-349"/>
+        </scene>
+        <!--Comunicacion View Controller-->
+        <scene sceneID="xFk-RA-yKa">
+            <objects>
+                <viewController id="8R2-mt-tm7" customClass="ComunicacionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kqm-ME-KpW"/>
+                        <viewControllerLayoutGuide type="bottom" id="sO6-1r-uxn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QXX-T6-aLc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ov-Sl-POC">
+                                <rect key="frame" x="20" y="230" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Llamar Aqtiva"/>
+                                <connections>
+                                    <action selector="llamarAqtiva:" destination="8R2-mt-tm7" eventType="touchUpInside" id="ujK-nV-L27"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-Cg-pde">
+                                <rect key="frame" x="137" y="230" width="99" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Llamar SCT">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="llamarSCT:" destination="8R2-mt-tm7" eventType="touchUpInside" id="GCi-jL-F21"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aPW-KU-E0D">
+                                <rect key="frame" x="254" y="230" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Email">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="emailAqtiva:" destination="8R2-mt-tm7" eventType="touchUpInside" id="AVr-yd-skf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quejas/Sugerencias" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sQ-ku-X45">
+                                <rect key="frame" x="78" y="201" width="164" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3KV-yu-7GO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277" y="-1034"/>
         </scene>
         <!--Table View Controller Rutas-->
         <scene sceneID="P96-TA-m53">
@@ -398,8 +494,22 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hCv-Jr-ikM">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="109" width="320" height="459"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ail-4W-L98">
+                                <rect key="frame" x="236" y="77" width="52" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Buscar"/>
+                                <connections>
+                                    <action selector="buscarUbicacion:forEvent:" destination="8bF-4n-INF" eventType="touchUpInside" id="r5D-qh-nrK"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KNC-cb-beN">
+                                <rect key="frame" x="20" y="73" width="208" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -416,6 +526,7 @@
                     <connections>
                         <outlet property="mapView" destination="hCv-Jr-ikM" id="a8R-gY-bzC"/>
                         <outlet property="sidebarButton" destination="pSo-sY-Ohc" id="4yp-iL-EaY"/>
+                        <outlet property="ubicacionABuscar" destination="KNC-cb-beN" id="QtG-S0-hgo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qGF-Z7-IqW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -428,6 +539,7 @@
         <image name="comunicacion.png" width="64" height="64"/>
         <image name="favoritas.png" width="50" height="50"/>
         <image name="informacion.png" width="64" height="64"/>
+        <image name="logotipo_curvas-01.png" width="1181" height="1181"/>
         <image name="mapa.png" width="50" height="50"/>
         <image name="menu.png" width="28" height="20"/>
         <image name="rutas.png" width="64" height="64"/>

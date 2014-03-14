@@ -10,9 +10,11 @@
 #import <MapKit/MapKit.h>
 #import "AppDelegate.h"
 
-@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>{
+@interface MapViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate>{
     CLLocationManager *locationManager;
     CLLocation *ubicacionActual;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
 }
 
 
@@ -20,5 +22,8 @@
 @property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, copy) AppDelegate *appDelegate;
 @property (nonatomic, strong) NSMutableArray* mRutas;
+//@property (nonatomic, strong) IBOutlet UITextField *buscarUbicacion;
+- (IBAction)buscarUbicacion:(id)sender forEvent:(UIEvent *)event;
+@property (weak, nonatomic) IBOutlet UITextField *ubicacionABuscar;
 
 @end

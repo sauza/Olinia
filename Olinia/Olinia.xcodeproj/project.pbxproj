@@ -11,6 +11,7 @@
 		3C12D54F18B6BB5100BD34A3 /* favoritas.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C12D54B18B6BB5100BD34A3 /* favoritas.png */; };
 		3C12D55018B6BB5100BD34A3 /* informacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C12D54C18B6BB5100BD34A3 /* informacion.png */; };
 		3C12D55118B6BB5100BD34A3 /* mapa.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C12D54D18B6BB5100BD34A3 /* mapa.png */; };
+		3C2F045B18C8E3F5002D3BCE /* ComunicacionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F045A18C8E3F5002D3BCE /* ComunicacionViewController.m */; };
 		3C5C9B8718C59D57000FE7C9 /* AddressAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C5C9B8618C59D57000FE7C9 /* AddressAnnotation.m */; };
 		3C8FEA1018A5336100B497F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA0F18A5336100B497F2 /* Foundation.framework */; };
 		3C8FEA1218A5336100B497F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA1118A5336100B497F2 /* CoreGraphics.framework */; };
@@ -32,6 +33,8 @@
 		3C8FEA4F18A540B500B497F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FEA4E18A540B500B497F2 /* CoreLocation.framework */; };
 		3C8FEA5318A5417500B497F2 /* SidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FEA5218A5417500B497F2 /* SidebarViewController.m */; };
 		3C8FEA5618A5425C00B497F2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FEA5518A5425C00B497F2 /* SWRevealViewController.m */; };
+		3C957BF118C901CF00508240 /* GeneralInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C957BF018C901CF00508240 /* GeneralInfoViewController.m */; };
+		3C957BF318C903E300508240 /* logotipo_curvas-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C957BF218C903E300508240 /* logotipo_curvas-01.png */; };
 		3CB33DC718C638E800EBFF7D /* Celda.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB33DC618C638E800EBFF7D /* Celda.m */; };
 		3CB33DCD18C6A58400EBFF7D /* InfoRutaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB33DCC18C6A58400EBFF7D /* InfoRutaViewController.m */; };
 		3CBD64CE18BAC49E0038FD2C /* comunicacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CBD64CC18BAC49E0038FD2C /* comunicacion.png */; };
@@ -57,6 +60,8 @@
 		3C12D54B18B6BB5100BD34A3 /* favoritas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = favoritas.png; sourceTree = "<group>"; };
 		3C12D54C18B6BB5100BD34A3 /* informacion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = informacion.png; sourceTree = "<group>"; };
 		3C12D54D18B6BB5100BD34A3 /* mapa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapa.png; sourceTree = "<group>"; };
+		3C2F045918C8E3F5002D3BCE /* ComunicacionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComunicacionViewController.h; sourceTree = "<group>"; };
+		3C2F045A18C8E3F5002D3BCE /* ComunicacionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComunicacionViewController.m; sourceTree = "<group>"; };
 		3C5C9B8518C59D57000FE7C9 /* AddressAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressAnnotation.h; sourceTree = "<group>"; };
 		3C5C9B8618C59D57000FE7C9 /* AddressAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressAnnotation.m; sourceTree = "<group>"; };
 		3C8FEA0C18A5336100B497F2 /* Olinia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Olinia.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,10 +87,13 @@
 		3C8FEA4A18A53C6100B497F2 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = ../MapViewController.m; sourceTree = "<group>"; };
 		3C8FEA4C18A5407E00B497F2 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		3C8FEA4E18A540B500B497F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		3C8FEA5118A5413E00B497F2 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SidebarViewController.h; path = ../SidebarViewController.h; sourceTree = "<group>"; };
-		3C8FEA5218A5417500B497F2 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SidebarViewController.m; path = ../SidebarViewController.m; sourceTree = "<group>"; };
+		3C8FEA5118A5413E00B497F2 /* SidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SidebarViewController.h; sourceTree = "<group>"; };
+		3C8FEA5218A5417500B497F2 /* SidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SidebarViewController.m; sourceTree = "<group>"; };
 		3C8FEA5418A5425C00B497F2 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		3C8FEA5518A5425C00B497F2 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		3C957BEF18C901CF00508240 /* GeneralInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralInfoViewController.h; sourceTree = "<group>"; };
+		3C957BF018C901CF00508240 /* GeneralInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralInfoViewController.m; sourceTree = "<group>"; };
+		3C957BF218C903E300508240 /* logotipo_curvas-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logotipo_curvas-01.png"; sourceTree = "<group>"; };
 		3CB33DC518C638E800EBFF7D /* Celda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Celda.h; sourceTree = "<group>"; };
 		3CB33DC618C638E800EBFF7D /* Celda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Celda.m; sourceTree = "<group>"; };
 		3CB33DCB18C6A58400EBFF7D /* InfoRutaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoRutaViewController.h; sourceTree = "<group>"; };
@@ -168,12 +176,14 @@
 				3C8FEA3E18A534DA00B497F2 /* MainStoryboard.storyboard */,
 				3C8FEA4918A53C5700B497F2 /* MapViewController.h */,
 				3C8FEA4A18A53C6100B497F2 /* MapViewController.m */,
-				3C8FEA5118A5413E00B497F2 /* SidebarViewController.h */,
-				3C8FEA5218A5417500B497F2 /* SidebarViewController.m */,
 				3CBD64D018BAC95E0038FD2C /* TableViewControllerRutas.h */,
 				3CBD64D118BAC95E0038FD2C /* TableViewControllerRutas.m */,
 				3CB33DCB18C6A58400EBFF7D /* InfoRutaViewController.h */,
 				3CB33DCC18C6A58400EBFF7D /* InfoRutaViewController.m */,
+				3C2F045918C8E3F5002D3BCE /* ComunicacionViewController.h */,
+				3C2F045A18C8E3F5002D3BCE /* ComunicacionViewController.m */,
+				3C957BEF18C901CF00508240 /* GeneralInfoViewController.h */,
+				3C957BF018C901CF00508240 /* GeneralInfoViewController.m */,
 				3C8FEA2118A5336100B497F2 /* Images.xcassets */,
 				3C8FEA5718A5426800B497F2 /* Library */,
 				3C8FEA1618A5336100B497F2 /* Supporting Files */,
@@ -184,6 +194,7 @@
 		3C8FEA1618A5336100B497F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3C957BF218C903E300508240 /* logotipo_curvas-01.png */,
 				3C8FEA7718A84B8600B497F2 /* bar_buttons */,
 				3C8FEA5C18A55A5F00B497F2 /* Iconos */,
 				3C8FEA5B18A55A5400B497F2 /* SplashScreen */,
@@ -218,6 +229,8 @@
 		3C8FEA5718A5426800B497F2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				3C8FEA5118A5413E00B497F2 /* SidebarViewController.h */,
+				3C8FEA5218A5417500B497F2 /* SidebarViewController.m */,
 				3C8FEA5518A5425C00B497F2 /* SWRevealViewController.m */,
 				3C8FEA5418A5425C00B497F2 /* SWRevealViewController.h */,
 				3CEFF2CE18AC31BC00A4E59A /* loadData.h */,
@@ -343,6 +356,7 @@
 				3C12D55118B6BB5100BD34A3 /* mapa.png in Resources */,
 				3C8FEA4118A5379700B497F2 /* menu.png in Resources */,
 				3C12D55018B6BB5100BD34A3 /* informacion.png in Resources */,
+				3C957BF318C903E300508240 /* logotipo_curvas-01.png in Resources */,
 				3C8FEA3F18A534DA00B497F2 /* MainStoryboard.storyboard in Resources */,
 				3C8FEA4318A537B200B497F2 /* menu@2x.png in Resources */,
 				3C12D54F18B6BB5100BD34A3 /* favoritas.png in Resources */,
@@ -370,11 +384,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CB33DC718C638E800EBFF7D /* Celda.m in Sources */,
+				3C2F045B18C8E3F5002D3BCE /* ComunicacionViewController.m in Sources */,
 				3C8FEA5318A5417500B497F2 /* SidebarViewController.m in Sources */,
 				3C8FEA2018A5336100B497F2 /* AppDelegate.m in Sources */,
 				3CBD64D218BAC95E0038FD2C /* TableViewControllerRutas.m in Sources */,
 				3C8FEA1C18A5336100B497F2 /* main.m in Sources */,
 				3C8FEA4B18A53C6100B497F2 /* MapViewController.m in Sources */,
+				3C957BF118C901CF00508240 /* GeneralInfoViewController.m in Sources */,
 				3CEFF2D318AC328D00A4E59A /* Ruta.m in Sources */,
 				3CEFF2D618AC34BC00A4E59A /* Punto.m in Sources */,
 				3C8FEA5618A5425C00B497F2 /* SWRevealViewController.m in Sources */,

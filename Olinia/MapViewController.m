@@ -20,14 +20,21 @@
 //@synthesize appDelegate=_appDelegate;
 
 @synthesize mRutas=_mRutas;
+@synthesize ubicacionABuscar=_ubicacionABuscar;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title=@"Buscar";
+    //[self.ubicacionABuscar setDelegate:self];
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
+    locationManager = [[CLLocationManager alloc] init];
+    self.mRutas=[NSMutableArray array];
+    
     
     self.mapView.delegate = self;
-    
-    locationManager = [[CLLocationManager alloc] init];
+    [self.ubicacionABuscar setDelegate:self];
     locationManager.delegate = self;
     locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
@@ -41,8 +48,17 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.mRutas=[NSMutableArray array];
     self.mRutas=[AppDelegate getRuta];
+    
+//    UISearchBar *search = [[UISearchBar alloc] init];
+//    [search setTintColor:[UIColor colorWithRed:233.0/255.0
+//                                         green:233.0/255.0
+//                                          blue:233.0/255.0
+//                                         alpha:1.0]];
+//    search.frame = CGRectMake(0, 0, 320,50);
+//    search.delegate = self;
+//    search.showsBookmarkButton = YES;
+//    [self.view addSubview:search];
     
      
 }
@@ -102,6 +118,21 @@
         //longitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
         //latitudeLabel.text = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
     }
+}
+
+
+
+
+- (IBAction)buscarUbicacion:(id)sender forEvent:(UIEvent *)event {
+    [self.ubicacionABuscar resignFirstResponder];
+    
+}
+
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
 }
 
 
