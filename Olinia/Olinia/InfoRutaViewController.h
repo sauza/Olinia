@@ -16,11 +16,20 @@
 }
 
 @property(nonatomic) Ruta *rutaMostrar;
-@property (nonatomic, strong) IBOutlet MKMapView *mapView; 
+
+@property (weak, nonatomic) IBOutlet UIImageView *imagenBus;
+@property (weak, nonatomic) IBOutlet UILabel *labelPrecio;
+@property (weak, nonatomic) IBOutlet UILabel *labelOrigen;
+@property (weak, nonatomic) IBOutlet UILabel *labelDestino;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
+
+/*
+@property (nonatomic, strong) IBOutlet MKMapView *mapView;
 @property (nonatomic, assign) IBOutlet UILabel *labelPrecio;
 @property (nonatomic, assign) IBOutlet UILabel *labelOrigen;
 @property (nonatomic, assign) IBOutlet UILabel *labelDestino;
 @property (nonatomic) IBOutlet UIImageView *imagenBus;
-@property (nonatomic, strong) IBOutlet UIPickerView *wheelParadas;
+@property (nonatomic, strong) IBOutlet UIPickerView *wheelParadas;*/
 
 @end

@@ -15,7 +15,7 @@
 @property (nonatomic) BOOL firstTime;
 @property (nonatomic, copy) NSMutableArray *rutaCompArray;
 
-+(NSMutableArray *) getRuta;
++(NSMutableArray *) getRuta:(int) tipoRuta;
 
 
 @end

@@ -14,7 +14,9 @@
 @implementation AppDelegate
 @synthesize firstTime=_firstTime;
 @synthesize rutaCompArray=_rutaCompArray;
-static NSMutableArray *rutaComp = nil;
+static NSMutableArray *rutaTuzobusComp = nil;
+static NSMutableArray *rutaMicrobusComp = nil;
+static NSMutableArray *rutaCombiComp = nil;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -71,11 +73,24 @@ static NSMutableArray *rutaComp = nil;
     
     loadData *loader;
     loader=[[loadData alloc]init];
+    loader.bandera=0;
     [loader cargaInicial];
     self.rutaCompArray=loader.arrayDatos;
     self.firstTime=TRUE;
-    rutaComp=self.rutaCompArray;
+    rutaTuzobusComp=self.rutaCompArray;
     
+    /*loader.bandera=1;
+    [loader cargaInicial];
+    self.rutaCompArray=loader.arrayDatos;
+    self.firstTime=TRUE;
+    rutaMicrobusComp=self.rutaCompArray;
+
+    loader.bandera=2;
+    [loader cargaInicial];
+    self.rutaCompArray=loader.arrayDatos;
+    self.firstTime=TRUE;
+    rutaCombiComp=self.rutaCompArray;*/
+
     
     //    _appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     //    _appDelegate.rutas=loader.arrayDatos;
@@ -120,21 +135,29 @@ static NSMutableArray *rutaComp = nil;
     }
     [self reloadInputViews];
 }
-+(NSMutableArray*) getRuta
++(NSMutableArray*) getRuta:(int) tipoRuta
 {
+    int band=0;
     @synchronized(self)
     {
-        if(rutaComp == nil)
-        {
-            rutaComp = [[self alloc] init];
-            
-            rutaComp = [[NSMutableArray alloc] init];
-            
-            
-            
+        if(tipoRuta==0){
+            return rutaTuzobusComp;
+            band=1;
         }
-        return rutaComp;
+        else if(tipoRuta==1){
+            return rutaMicrobusComp;
+            band=1;
+        }
+        else if (tipoRuta==2){
+            return rutaCombiComp;
+            band=1;
+        }
     }
+    
+    if (band==0) {
+        return nil;
+    }
+    return nil;
 }
 
 @end

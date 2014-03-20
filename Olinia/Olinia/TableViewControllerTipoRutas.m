@@ -1,30 +1,37 @@
 //
-//  TableViewControllerRutas.m
+//  TableViewControllerTipoRutas.m
 //  Olinia
 //
 //  Created by Christopher Hardy on 2/23/14.
 //  Copyright (c) 2014 Christopher Hardy. All rights reserved.
 //
 
-#import "TableViewControllerRutas.h"
+//#import "TableViewControllerTipoRutas.h"
 #import "SWRevealViewController.h"
 #import "Celda.h"
-#import "InfoRutaViewController.h"
+#import "TableViewControllerTipoRutas.h"
 
 
-@implementation TableViewControllerRutas
-@synthesize appDelegate=_appDelegate;
-@synthesize arrayDatos=_arrayDatos;
-static Ruta *rutaMostrar = nil;
+@implementation TableViewControllerTipoRutas
+@synthesize menuItems=_menuItems;
+//@synthesize appDelegate=_appDelegate;
+//@synthesize arrayDatos=_arrayDatos;
+//static NSMutableArray *rutaMostrar = nil;
+static int tipoRuta;
 
 
 - (void) viewDidLoad{
     
-    self.title=@"Rutas Disponibles";
+    tipoRuta=0;
     
-    rutaMostrar=[[Ruta alloc]init];
+    self.title=@"Tipos";
     
-    self.arrayDatos=[AppDelegate getRuta];
+    _menuItems = @[@"TuzoBus", @"Microbus", @"Combi", @"Taxi"];
+    
+    //rutaMostrar=[[NSMutableArray alloc]init];
+    
+    //self.arrayDatos=[AppDelegate getRuta];
+    
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
     UIImage *menu = [UIImage imageNamed:@"menu.png"];
@@ -36,10 +43,10 @@ static Ruta *rutaMostrar = nil;
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"reaching accessoryButtonTappedForRowWithIndexPath:");
-    rutaMostrar=[self.arrayDatos objectAtIndex:indexPath.row];
+    tipoRuta=indexPath.row;
+    //rutaMostrar=[self.arrayDatos objectAtIndex:indexPath.row];
     
 }
-
 // 5 Marzo No necesario por implementacion de accessoryButtonTappedForRowWithIndexPath
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -52,20 +59,24 @@ static Ruta *rutaMostrar = nil;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     //numero de filas
-    return [self.arrayDatos count];
+    return [self.menuItems count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //Llenado de celdas con info de ArrayRutas
-    Celda *cell = [tableView dequeueReusableCellWithIdentifier:@"celdaListaRutas"];
-    if (cell == nil) {
-        cell = [[Celda alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celdaListaRutas"];
-    }
-    cell.nombre.text = [[self.arrayDatos objectAtIndex:indexPath.row]nombreRuta];
-    cell.imagenBus.image=[[self.arrayDatos objectAtIndex:indexPath.row]imagenCromatica];
+    NSString *CellIdentifier = @"celdaTipoRuta";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    /*if (cell == nil) {
+        cell = [[Celda alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"celdaListaTipoRutas"];
+    }*/
+    cell.textLabel.text=[self.menuItems objectAtIndex:indexPath.row];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
+
+
+
+
 
 // 5_Marzo no es necesaria por el momento por presentacion mediante
 // accessoryButtonTappedForRowWithIndexPath
@@ -79,7 +90,7 @@ static Ruta *rutaMostrar = nil;
 //    }
 //
 
-+(Ruta*) getRutaMostrar
+/*+(Ruta*) getRutaMostrar
 {
     @synchronized(self)
     {
@@ -90,8 +101,15 @@ static Ruta *rutaMostrar = nil;
         }
         return rutaMostrar;
     }
-}
+}*/
 
+
++(int) getTipoRutaMostrar{
+    @synchronized(self)
+    {
+        return tipoRuta;
+    }
+}
 
 
 @end

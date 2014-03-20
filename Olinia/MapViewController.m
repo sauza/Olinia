@@ -18,7 +18,6 @@
 @synthesize mapView;
 //@synthesize mapView;
 //@synthesize appDelegate=_appDelegate;
-
 @synthesize mRutas=_mRutas;
 @synthesize ubicacionABuscar=_ubicacionABuscar;
 
@@ -48,7 +47,7 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    self.mRutas=[AppDelegate getRuta];
+    //self.mRutas=[AppDelegate getRuta];
     
 //    UISearchBar *search = [[UISearchBar alloc] init];
 //    [search setTintColor:[UIColor colorWithRed:233.0/255.0

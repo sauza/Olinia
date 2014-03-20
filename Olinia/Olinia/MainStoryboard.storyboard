@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Rg0-HO-dK6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Rg0-HO-dK6">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -59,7 +59,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muc-Na-qIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="-1072"/>
+            <point key="canvasLocation" x="1277" y="-1780"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="cJn-wg-BR1">
@@ -346,28 +346,24 @@
             </objects>
             <point key="canvasLocation" x="1277" y="-1034"/>
         </scene>
-        <!--Table View Controller Rutas-->
+        <!--Table View Controller Tipo Rutas-->
         <scene sceneID="P96-TA-m53">
             <objects>
-                <tableViewController id="d6O-JF-ibl" customClass="TableViewControllerRutas" sceneMemberID="viewController">
+                <tableViewController id="d6O-JF-ibl" customClass="TableViewControllerTipoRutas" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="W9E-Rr-rs0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celdaListaRutas" rowHeight="65" id="OzA-Z0-TI4" customClass="Celda">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celdaTipoRuta" rowHeight="65" id="OzA-Z0-TI4" customClass="Celda">
                                 <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OzA-Z0-TI4" id="Fii-vl-u4G">
                                     <rect key="frame" x="0.0" y="0.0" width="253" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BHW-9O-Ryk">
-                                            <rect key="frame" x="6" y="13" width="98" height="37"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddW-LO-86V">
-                                            <rect key="frame" x="112" y="21" width="155" height="21"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TuzoBus" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5M2-bh-FOZ">
+                                            <rect key="frame" x="20" y="21" width="66" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -376,9 +372,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="imagenBus" destination="BHW-9O-Ryk" id="IMq-aw-bFV"/>
-                                    <outlet property="nombre" destination="ddW-LO-86V" id="bUA-iC-QVB"/>
-                                    <segue destination="jbm-FO-j2Y" kind="push" trigger="accessoryAction" id="kMM-Nr-kCf"/>
+                                    <segue destination="Rmn-iU-Ye9" kind="push" trigger="accessoryAction" id="ZQn-9d-eaJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -392,6 +386,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eG6-Sk-9u2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1277" y="-349"/>
+        </scene>
+        <!--Table View Controller Lista Rutas-->
+        <scene sceneID="5pv-hy-hkV">
+            <objects>
+                <tableViewController id="Rmn-iU-Ye9" customClass="TableViewControllerListaRutas" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="79" sectionHeaderHeight="22" sectionFooterHeight="22" id="BC0-Ge-z50">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="celdaListaRutas" rowHeight="85" id="6XP-wy-trm" customClass="Celda">
+                                <rect key="frame" x="0.0" y="22" width="320" height="85"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6XP-wy-trm" id="rd2-Au-Frr">
+                                    <rect key="frame" x="0.0" y="0.0" width="253" height="84"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pud-bn-Dc0">
+                                            <rect key="frame" x="20" y="23" width="98" height="37"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyz-hc-QHr">
+                                            <rect key="frame" x="126" y="16" width="127" height="52"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagenBus" destination="Pud-bn-Dc0" id="C1o-2K-KMc"/>
+                                    <outlet property="nombre" destination="uyz-hc-QHr" id="rVy-md-drd"/>
+                                    <segue destination="jbm-FO-j2Y" kind="push" trigger="accessoryAction" id="Opv-9d-Eh1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Rmn-iU-Ye9" id="f4a-wk-QHK"/>
+                            <outlet property="delegate" destination="Rmn-iU-Ye9" id="EIO-xA-wRu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="lpX-KY-vr3"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9B-8R-H8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741" y="-349"/>
         </scene>
         <!--Info Ruta View Controller-->
         <scene sceneID="6rS-wn-lnz">
@@ -455,16 +496,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="RvG-cG-auB"/>
                     <connections>
-                        <outlet property="imagenBus" destination="shS-4Q-T3m" id="ghr-dC-6yg"/>
-                        <outlet property="labelDestino" destination="Pfh-gX-DQd" id="RMu-Lx-wg1"/>
-                        <outlet property="labelOrigen" destination="m4b-MB-Lme" id="Uyd-VR-kIy"/>
-                        <outlet property="labelPrecio" destination="mdu-Pa-1Xs" id="FZA-tJ-TXc"/>
-                        <outlet property="mapView" destination="R70-DO-JKm" id="N7D-pr-zDp"/>
+                        <outlet property="imagenBus" destination="shS-4Q-T3m" id="piO-Hy-uI4"/>
+                        <outlet property="labelDestino" destination="Pfh-gX-DQd" id="ow9-a6-bqK"/>
+                        <outlet property="labelOrigen" destination="m4b-MB-Lme" id="pro-2q-QEa"/>
+                        <outlet property="labelPrecio" destination="mdu-Pa-1Xs" id="pvf-Rr-sm3"/>
+                        <outlet property="mapView" destination="R70-DO-JKm" id="aYe-ZR-kld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ht0-aB-Rhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1791" y="-349"/>
+            <point key="canvasLocation" x="2165" y="-349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bgk-Ng-cY7">

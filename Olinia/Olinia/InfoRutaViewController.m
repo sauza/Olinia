@@ -9,7 +9,7 @@
 #import "InfoRutaViewController.h"
 #import "SWRevealViewController.h"
 #import "AddressAnnotation.h"
-#import "TableViewControllerRutas.h"
+#import "TableViewControllerListaRutas.h"
 
 @interface InfoRutaViewController ()
 
@@ -21,7 +21,7 @@
 @synthesize labelOrigen=_labelOrigen;
 @synthesize labelDestino=_labelDestino;
 @synthesize imagenBus=_imagenBus;
-@synthesize wheelParadas=_wheelParadas;
+//@synthesize wheelParadas=_wheelParadas;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,11 +40,13 @@
     
     self.title = @"Información Ruta";
     
+    auxRuta=[TableViewControllerListaRutas getRutaMostrar];
+    
     //self.navigationController.presentedViewController.title=auxRuta.nombreRuta;
     
     //insercion de puntos para ruta seleccionada
     CLLocationCoordinate2D ctrpoint;
-    auxRuta=[TableViewControllerRutas getRutaMostrar];
+    //auxRuta=[TableViewControllerTipoRutas getRutaMostrar];
     NSMutableArray *puntos= auxRuta.puntos;
     for (int i=0; i<[puntos count]; i++) {
         ctrpoint.latitude = [[puntos objectAtIndex:i]latitud];

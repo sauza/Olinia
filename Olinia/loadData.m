@@ -34,7 +34,7 @@
 @synthesize actualPunto=_actualPunto;
 
 -(void)cargaInicial{
-    self.bandera=1;
+    //self.bandera=1;
     self.arrayDatos = [[NSMutableArray alloc]init];
     arrayPuntos = [[NSMutableArray alloc] init];
     arrayRutasFin= [[NSMutableArray alloc] init];
@@ -46,14 +46,14 @@
 
 - (void)parseXML{
     NSString *path;
-    if(self.bandera==1){
-        path = @"http://aqtiva.mx/olinia/prueba.xml";
+    if(self.bandera==0){
+        path = @"http://aqtiva.mx/olinia/prueba1.xml";
     }
-    else if (self.bandera==2){
-        path = @"http://users.salleurl.edu/~xsole/ms/artists01.xml";
+    else if (self.bandera==1){
+        //path = @"http://users.salleurl.edu/~xsole/ms/artists01.xml";
     }
-    else if (_bandera==3){
-        path = @"http://users.salleurl.edu/~xsole/ms/works01.xml";
+    else if (_bandera==2){
+        //path = @"http://users.salleurl.edu/~xsole/ms/works01.xml";
     }
     NSURL *xmlURL = [NSURL URLWithString:path];
     parser = [[NSXMLParser alloc] initWithContentsOfURL:xmlURL];
@@ -99,7 +99,14 @@
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
         if ([elementName isEqualToString:@"ruta"]) {
-            self.arrayDatos = [[NSMutableArray alloc] init];
+            //self.arrayDatos = [[NSMutableArray alloc] init];
+            if([arrayPuntos count]>1)
+            {
+            self.rutaActual.puntos = arrayPuntos;
+            [arrayRutasFin addObject:self.rutaActual];
+             self.arrayDatos=arrayRutasFin;
+                arrayPuntos=[[NSMutableArray alloc] init];
+            }
         }
         else if ([elementName isEqualToString:@"idRuta"]) {
             self.rutaActual.ID_Ruta = [stringBuffer intValue];
@@ -139,7 +146,7 @@
             self.actualPunto.nombre = stringBuffer;
             [arrayPuntos addObject:self.actualPunto];
         }
-        else if ([elementName isEqualToString:@"endof"]){
+        else if ([elementName isEqualToString:@"/paradas"]){
             self.rutaActual.puntos = arrayPuntos;
             [arrayRutasFin addObject:self.rutaActual];
         }
@@ -149,7 +156,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser parseErrorOccurred:(NSError *)parseError {
-    NSString * errorString = [NSString stringWithFormat:@"Error while processing XML file (Error code %d)",[parseError code]];
+    NSString * errorString = [NSString stringWithFormat:@"Error while processing XML file (Error code %ld)",(long)[parseError code]];
     UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:@"ERROR" message:errorString delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [errorAlert show];
 }
