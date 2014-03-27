@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
 	
-    self.title=@"Información";
+    self.title=@"Comunicación";
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     UIImage *menu = [UIImage imageNamed:@"menu.png"];
     

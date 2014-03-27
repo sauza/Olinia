@@ -55,7 +55,7 @@
         addAnnotation.coordinate=ctrpoint;
         [self.mapView addAnnotation:addAnnotation];
     }
-    
+
     //centrado de mapa en ruta
     int i=([puntos count]/2)-2;
     CLLocation *ubicacionMedia=[[CLLocation alloc] initWithLatitude:[[puntos objectAtIndex:i]latitud] longitude:[[puntos objectAtIndex:i]longitud]];
@@ -67,6 +67,9 @@
     self.labelPrecio.text=auxRuta.precio;
     self.labelDestino.text=auxRuta.destino;
     self.labelOrigen.text=auxRuta.origen;
+    
+    
+    
     
     //self.wheelParadas.delegate = self;
     

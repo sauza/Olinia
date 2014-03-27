@@ -35,6 +35,7 @@
 		3C8FEA5618A5425C00B497F2 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C8FEA5518A5425C00B497F2 /* SWRevealViewController.m */; };
 		3C957BF118C901CF00508240 /* GeneralInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C957BF018C901CF00508240 /* GeneralInfoViewController.m */; };
 		3C957BF318C903E300508240 /* logotipo_curvas-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3C957BF218C903E300508240 /* logotipo_curvas-01.png */; };
+		3CB14E6A18E0FE3E002767A4 /* AyudaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB14E6918E0FE3E002767A4 /* AyudaViewController.m */; };
 		3CB33DC718C638E800EBFF7D /* Celda.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB33DC618C638E800EBFF7D /* Celda.m */; };
 		3CB33DCD18C6A58400EBFF7D /* InfoRutaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB33DCC18C6A58400EBFF7D /* InfoRutaViewController.m */; };
 		3CBD64CE18BAC49E0038FD2C /* comunicacion.png in Resources */ = {isa = PBXBuildFile; fileRef = 3CBD64CC18BAC49E0038FD2C /* comunicacion.png */; };
@@ -95,6 +96,8 @@
 		3C957BEF18C901CF00508240 /* GeneralInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralInfoViewController.h; sourceTree = "<group>"; };
 		3C957BF018C901CF00508240 /* GeneralInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralInfoViewController.m; sourceTree = "<group>"; };
 		3C957BF218C903E300508240 /* logotipo_curvas-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logotipo_curvas-01.png"; sourceTree = "<group>"; };
+		3CB14E6818E0FE3E002767A4 /* AyudaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AyudaViewController.h; sourceTree = "<group>"; };
+		3CB14E6918E0FE3E002767A4 /* AyudaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AyudaViewController.m; sourceTree = "<group>"; };
 		3CB33DC518C638E800EBFF7D /* Celda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Celda.h; sourceTree = "<group>"; };
 		3CB33DC618C638E800EBFF7D /* Celda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Celda.m; sourceTree = "<group>"; };
 		3CB33DCB18C6A58400EBFF7D /* InfoRutaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoRutaViewController.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				3C2F045A18C8E3F5002D3BCE /* ComunicacionViewController.m */,
 				3C957BEF18C901CF00508240 /* GeneralInfoViewController.h */,
 				3C957BF018C901CF00508240 /* GeneralInfoViewController.m */,
+				3CB14E6818E0FE3E002767A4 /* AyudaViewController.h */,
+				3CB14E6918E0FE3E002767A4 /* AyudaViewController.m */,
 				3C8FEA2118A5336100B497F2 /* Images.xcassets */,
 				3C8FEA5718A5426800B497F2 /* Library */,
 				3C8FEA1618A5336100B497F2 /* Supporting Files */,
@@ -391,6 +396,7 @@
 				3CB33DC718C638E800EBFF7D /* Celda.m in Sources */,
 				3C2F045B18C8E3F5002D3BCE /* ComunicacionViewController.m in Sources */,
 				3C8FEA5318A5417500B497F2 /* SidebarViewController.m in Sources */,
+				3CB14E6A18E0FE3E002767A4 /* AyudaViewController.m in Sources */,
 				3C8FEA2018A5336100B497F2 /* AppDelegate.m in Sources */,
 				3CBD64D218BAC95E0038FD2C /* TableViewControllerTipoRutas.m in Sources */,
 				3C8FEA1C18A5336100B497F2 /* main.m in Sources */,

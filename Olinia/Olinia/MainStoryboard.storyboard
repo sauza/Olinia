@@ -26,6 +26,30 @@
             </objects>
             <point key="canvasLocation" x="26" y="29"/>
         </scene>
+        <!--Ayuda View Controller-->
+        <scene sceneID="fEM-IM-EOk">
+            <objects>
+                <viewController id="vJK-vp-etW" customClass="AyudaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XIj-Gp-gJz"/>
+                        <viewControllerLayoutGuide type="bottom" id="o5Q-GQ-GtN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QPO-2c-Pba">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KyL-mz-fCK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jgK-2U-4b2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277" y="-2364"/>
+        </scene>
         <!--General Info View Controller-->
         <scene sceneID="byL-7J-p8g">
             <objects>
@@ -59,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="muc-Na-qIJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1277" y="-1780"/>
+            <point key="canvasLocation" x="1277" y="-1704"/>
         </scene>
         <!--Sidebar View Controller-->
         <scene sceneID="cJn-wg-BR1">
@@ -279,6 +303,9 @@
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="vJK-vp-etW" kind="custom" customClass="SWRevealViewControllerSegue" id="R0J-P1-lLf"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -520,7 +547,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g97-OI-3cR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="333"/>
+            <point key="canvasLocation" x="624" y="333"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="ZT3-er-Wpv">
